@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+:root{
+    --color_negro: #000;
+    --color_gris: #e1e0db;
+    --color_blanco: #fff;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    height: 60px;
+    border-bottom: 1px solid var(--color_gris);
+}
+
+.container__imagen__navegador{
+    height: 60px;
+}
+
+.container__imagen__navegador a{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+.imagen__navegador{
+    height: 50px;
+    padding: 5px 0;
+}
+
+.parrafo_navegador{
+    font-size: 25px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 0 0 20px;
+    color: var(--color_negro);
+}
+
+.boton{
+    display: none;
+    height: 60px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    border: none;
+    background-color: var(--color_blanco);
+}
+
+.boton img{
+    margin-top: 6px;
+}
+
+.navegador{
+    max-width: 1200px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.lista-navegador{
+    height: 60px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.lista-navegador li{
+    height: 60px;
+    list-style: none;
+    margin-left: 30px;
+}
+
+.lista-navegador li a{
+    height: 60px;
+    font-size: 18px;
+    line-height: 60px;
+    color: var(--color_negro);
+}
+
+
+@media only screen and (max-width: 786px){
+
+    .parrafo_navegador{
+        font-size: 22px;
+    }
+
+    .lista-navegador li a{
+        font-size: 20px;
+    }
+
+    header{
+        border: none;
+    }
+
+    .boton{
+        display: inline-block;
+    }
+
+    .navegador{
+        padding: 0;
+    }
+
+    .imagen__navegador{
+        padding: 5px 0px 5px 20px;
+    }
+
+    .lista-navegador{
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .menu-abierto{
+        display: flex;
+        position: absolute;
+        pointer-events: all;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        flex-direction: column;
+        background-color: var(--color_blanco);
+    }
+
+    .lista-navegador li{
+        margin: 5px auto;
+    }
+
+    .cerrar-menu{
+        align-self: flex-end;
+    }
+
+}
+
+@media only screen and (max-width: 320px){
+    .parrafo_navegador{
+        display: none;
+    }
+}
+
