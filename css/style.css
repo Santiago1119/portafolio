@@ -15,6 +15,11 @@ header{
     border-bottom: 1px solid var(--color_gris);
 }
 
+.inactive{
+    display: none;
+}
+/*BARRA DE NAVEGACION*/
+
 .container__imagen__navegador{
     height: 60px;
 }
@@ -46,6 +51,7 @@ a{
     margin: 0 20px 0 0;
     padding: 0;
     border: none;
+    cursor: pointer;
     background-color: var(--color_blanco);
 }
 
@@ -54,7 +60,7 @@ a{
 }
 
 .navegador{
-    max-width: 1200px;
+    max-width: 1400px;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -73,6 +79,7 @@ a{
     height: 60px;
     list-style: none;
     margin-left: 30px;
+    position: relative;
 }
 
 .lista-navegador li a{
@@ -82,8 +89,72 @@ a{
     color: var(--color_negro);
 }
 
+.lista-navegador li a::before{
+    content: "";
+    background-color: var(--color_negro);
+    position: absolute;
+    top: 42px;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.lista-navegador a:hover::before{
+    opacity: .8;
+}
+
+/* SECCION SOBRE MI */
+
+main{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.sobreMi{
+    margin: 20px auto;
+    max-width: 680px;
+    text-align: center;
+}
+
+.sobreMi__imagenContainer{
+    margin: auto;
+    width: 200px;
+}
+
+.sobreMi__imagen{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sobreMi__saludo{
+    font-size: 25px;
+}
+
+.sobreMi__titulo{
+    line-height: 50px;
+    font-size: 40px;
+}
+
+.sobreMi__presentacion{
+    font-size: 22px;
+    line-height: 35px;
+}
+
+.botonContacto{
+    background-color: var(--color_negro);
+    color: var(--color_blanco);
+    font-size: 20px;
+    padding: 7px 12px;
+    border-radius: 10px;
+}
 
 @media only screen and (max-width: 786px){
+
+    .lista-navegador li a::before{
+        content: none;
+    }
 
     .parrafo_navegador{
         font-size: 22px;
@@ -117,7 +188,7 @@ a{
 
     .menu-abierto{
         display: flex;
-        position: absolute;
+        position: fixed;
         pointer-events: all;
         width: 100vw;
         height: 100vh;
